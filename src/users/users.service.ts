@@ -8,7 +8,7 @@ export class UsersService {
     constructor(private db: DbService) { }
 
     findByEmail(email: string) {
-        this.db.user.findFirst({ where: { email } })
+        return this.db.user.findFirst({ where: { email } })
     }
 
     create(email: string, hash: string, salt: string) {
